@@ -13,24 +13,25 @@ package Ejercicio5_tesoro;
 import java.util.Scanner;
 public class Ejercicio5_tesoro {
     public static void main(String[] args) {
-        short coordX=0;
-        short coordY=0;
+        
         Scanner sc = new Scanner(System.in);
-        short[] coordenadas = new short[3];
+        short[] coordenadasIntroducidas= new short[2];
+	short[] coordenadasTesoro = new short[2];
         char[][] matriz;
         matriz = new char[5][5];
-        coordenadas=creaMatriz(matriz);
+        coordenadasTesoro=creaMatriz(matriz);
         for(int i=0;i<matriz.length;i++){
             for(int j=0;j<matriz.length;j++){
                 System.out.print(matriz[i][j]+" ");
             }
             System.out.println();
         }
-        System.out.println("El tesoro se encuentra en la coordenada: "+(coordenadas[0]+1)+" "+(coordenadas[1]+1));
+        System.out.println("El tesoro se encuentra en la coordenada: "+(coordenadasTesoro[0])+" "+(coordenadasTesoro[1]));
         System.out.print("Indique la coordenada X: ");
-        coordX = sc.nextShort();
+        coordenadasIntroducidas[0] = sc.nextShort();
         System.out.print("Indique la coordenada Y: ");
-        coordY = sc.nextShort();
+        coordenadasIntroducidas[1] = sc.nextShort();
+	compruebaTesoro(coordenadasIntroducidas,coordenadasTesoro);
 
 
 
@@ -47,25 +48,29 @@ public class Ejercicio5_tesoro {
             }
         }
         matriz[filaAleatoria][columnaAleatoria]='T';
-        coordenadas[0]=filaAleatoria;
-        coordenadas[1]=columnaAleatoria;
+        coordenadas[0]=(short)(filaAleatoria+1);
+        coordenadas[1]=(short)(columnaAleatoria+1);
         return coordenadas;
     }
-    private static void compruebaTesoro(short coordenadas[],short tesoro[]){
-        int coordenadaX = tesoro[0] - coordenadas[0];
-        int coordenadaY = tesoro[1] - coordenadas[1];
+    private static void compruebaTesoro(short coordenadas[],short coordenadasTesoro[]){
+        int coordenadaX = coordenadasTesoro[0] - coordenadas[0];
+        int coordenadaY = coordenadasTesoro[1] - coordenadas[1];
 
         if(coordenadaX == 0 && coordenadaY==0) {
             System.out.println("¡HAS ENCONTRADO EL TESORO!");
             return;
         }
-        if(coordenadaY >0) {
-            System.out.println("El tesoro está más arriba");
+        if(coordenadaY > 0) {
+            System.out.println("El tesoro está más derecha");
         }else if(coordenadaY<0){
-            System.out.println("El tesoro etá más abajo");
-        }
+            System.out.println("El tesoro etá más izquierda");
+        } 
 
-        if()
+	if(coordenadaX > 0){
+		System.out.println("El tesoro está más a la abajo");
+	}else if (coordenadaX <0){
+		System.out.println("El tesoro está más a la arriba");
+	} 
 
     }
 }
