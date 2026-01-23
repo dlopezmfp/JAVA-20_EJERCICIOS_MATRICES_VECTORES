@@ -57,7 +57,7 @@
 16. Crea una función que reciba una matriz cuadrada y devuelva el promedio de los elementos de su diagonal principal.
 17. Crea una función que reciba un array de String y devuelva el número total de vocales (a, e, i, o, u) que hay en todas las cadenas combinadas.
 18. Define un array con las pulsaciones que has tenido en los últimos 15 entrenamientos. Crea funciones para calcular:
-    
+ 
 	a. Frecuencia media
     	b. Cuántas sesiones estuvieron en zona aeróbica (por encima 120)
     	c. El día con mayor pulsación
