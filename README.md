@@ -1,4 +1,4 @@
-# EJERCICIOS DE REPASO BUCLES / MÉTODOS
+# EJERCICIOS DE REPASO BUCLES / MÉTODOS PARA EXAMEN DEL 16 DE NOVIEMBRE
 
 1. Crear un programa que gestione una lista de nombres de productos y sus precios
    en arrays paralelos, utilizando métodos void (procedimientos) para las tareas
